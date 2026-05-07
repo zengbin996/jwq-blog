@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getArticles, getArticleCategories, mediaUrl, type Article } from '@/lib/api';
-import { hasLocale, getDictionary, t } from '@/lib/i18n';
+import { hasLocale, getDictionary, t, type Locale } from '@/lib/i18n';
 
 export async function generateMetadata({ params }: PageProps<'/[lang]/articles'>): Promise<Metadata> {
   const { lang } = await params;
@@ -49,10 +50,13 @@ function ArticleCard({ article, lang, readTimeLabel }: { article: Article; lang:
   );
 }
 
-export default async function ArticlesPage({ params, searchParams }: PageProps<'/[lang]/articles'> & { searchParams: Promise<{ category?: string }> }) {
-  const { lang } = await params;
-  if (!hasLocale(lang)) notFound();
-
+async function ArticlesList({
+  lang,
+  searchParams,
+}: {
+  lang: Locale;
+  searchParams: Promise<{ category?: string }>;
+}) {
   const { category: categorySlug } = await searchParams;
   const [articles, categories, dict] = await Promise.all([
     getArticles(), getArticleCategories(), getDictionary(lang),
@@ -64,8 +68,7 @@ export default async function ArticlesPage({ params, searchParams }: PageProps<'
     : articles;
 
   return (
-    <div className="container py-12 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-8">{dict.articles.title}</h1>
+    <>
       <div className="flex flex-wrap gap-2 mb-10">
         <Link href={`/${lang}/articles`} className={`px-4 py-1.5 rounded-full text-sm transition-colors ${!categorySlug ? 'bg-black dark:bg-white text-white dark:text-black' : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700'}`}>
           {dict.articles.all}
@@ -86,6 +89,21 @@ export default async function ArticlesPage({ params, searchParams }: PageProps<'
           ))}
         </div>
       )}
+    </>
+  );
+}
+
+export default async function ArticlesPage({ params, searchParams }: PageProps<'/[lang]/articles'> & { searchParams: Promise<{ category?: string }> }) {
+  const { lang } = await params;
+  if (!hasLocale(lang)) notFound();
+  const dict = await getDictionary(lang);
+
+  return (
+    <div className="container py-12 max-w-4xl">
+      <h1 className="text-3xl font-bold mb-8">{dict.articles.title}</h1>
+      <Suspense>
+        <ArticlesList lang={lang} searchParams={searchParams} />
+      </Suspense>
     </div>
   );
 }

@@ -4,9 +4,7 @@ const STRAPI_URL = process.env.STRAPI_URL ?? 'http://localhost:1337';
 const strapiHostname = new URL(STRAPI_URL).hostname;
 
 const nextConfig: NextConfig = {
-  experimental: {
-    cacheComponents: true,
-  },
+  cacheComponents: true,
   images: {
     remotePatterns: [
       {
