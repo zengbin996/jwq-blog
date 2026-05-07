@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "home": "首页",
+    "articles": "文章",
+    "photos": "相册",
+    "about": "关于我",
+    "frontend": "前端",
+    "backend": "后端",
+    "english": "英语",
+    "diary": "随笔"
+  },
+  "home": {
+    "hero_title": "Hey, 我是 JWQ 👋",
+    "hero_desc": "一个热爱旅行与技术的开发者，用代码和镜头记录生活。",
+    "read_articles": "阅读文章",
+    "view_photos": "查看相册",
+    "footprint_title": "旅行足迹",
+    "footprint_desc": "走过 {count} 个地方",
+    "motto_title": "为什么要旅游？",
+    "motto_subtitle": "生活并不缺乏美，只是缺乏一双发现美的眼睛",
+    "motto_1_title": "探索新文化和风景",
+    "motto_1_desc": "旅游提供了一个机会，让人们能够亲身体验不同文化和风景，了解不同地区的人民、历史和艺术，丰富个人的视野和见识。",
+    "motto_2_title": "放松和休闲",
+    "motto_2_desc": "旅游可以让人们从日常生活和工作的压力中解脱出来，享受度假胜地、海滩、山脉等自然环境，体验不同的气候和氛围，舒缓压力。",
+    "motto_3_title": "感受乐趣和享受当下",
+    "motto_3_desc": "旅游可以让人们专注于当下的乐趣和体验，暂时忘却烦恼，享受美食、观赏风景、参与各类活动，体验乐趣和愉悦。",
+    "motto_4_title": "时间和空间的改变",
+    "motto_4_desc": "离开熟悉的环境，身处陌生的地方，让人们能够重新审视自己的生活，在时间和空间的改变中，找到解决问题的新方法和新视角。",
+    "photos_title": "精选照片",
+    "photos_all": "查看全部 →"
+  },
+  "articles": {
+    "title": "文章",
+    "all": "全部",
+    "no_articles": "暂无文章",
+    "read_time": "{min} 分钟阅读",
+    "back": "← 返回文章列表"
+  },
+  "photos": {
+    "title": "相册",
+    "count": "{count} 张照片",
+    "count_group": "{count} 张",
+    "no_photos": "暂无照片",
+    "filter_all": "全部",
+    "filter_year": "年份",
+    "filter_region": "地区",
+    "filter_category": "分类"
+  },
+  "about": {
+    "title": "关于我",
+    "desc": "一个热爱旅行与技术的开发者。喜欢用代码解决问题，用镜头记录生活，在路上寻找答案。",
+    "skills": "技能"
+  }
+}

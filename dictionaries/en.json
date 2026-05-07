@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "home": "Home",
+    "articles": "Articles",
+    "photos": "Photos",
+    "about": "About",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "english": "English",
+    "diary": "Journal"
+  },
+  "home": {
+    "hero_title": "Hey, I'm JWQ 👋",
+    "hero_desc": "A developer who loves travel and technology, documenting life through code and a lens.",
+    "read_articles": "Read Articles",
+    "view_photos": "View Photos",
+    "footprint_title": "Travel Footprints",
+    "footprint_desc": "Visited {count} places",
+    "motto_title": "Why Travel?",
+    "motto_subtitle": "Life is not short of beauty, only the eyes to discover it.",
+    "motto_1_title": "Explore New Cultures",
+    "motto_1_desc": "Travel provides the opportunity to experience different cultures and landscapes firsthand, enriching your worldview with the history, art, and traditions of diverse regions.",
+    "motto_2_title": "Relax and Recharge",
+    "motto_2_desc": "Travel lets you escape the pressures of daily life, enjoy natural environments like beaches and mountains, and experience different climates to refresh your mind.",
+    "motto_3_title": "Enjoy the Present",
+    "motto_3_desc": "Travel helps you focus on the joy of the moment — savoring food, scenery, and activities — letting you set aside worries and fully embrace life.",
+    "motto_4_title": "A Change of Scene",
+    "motto_4_desc": "Leaving familiar surroundings and being in new places helps you reassess your life and find fresh perspectives and new approaches to old problems.",
+    "photos_title": "Featured Photos",
+    "photos_all": "View All →"
+  },
+  "articles": {
+    "title": "Articles",
+    "all": "All",
+    "no_articles": "No articles yet.",
+    "read_time": "{min} min read",
+    "back": "← Back to Articles"
+  },
+  "photos": {
+    "title": "Photos",
+    "count": "{count} photos",
+    "count_group": "{count} photos",
+    "no_photos": "No photos yet.",
+    "filter_all": "All",
+    "filter_year": "Year",
+    "filter_region": "Region",
+    "filter_category": "Category"
+  },
+  "about": {
+    "title": "About Me",
+    "desc": "A developer who loves travel and technology. I like solving problems with code, capturing life through a lens, and finding answers on the road.",
+    "skills": "Skills"
+  }
+}

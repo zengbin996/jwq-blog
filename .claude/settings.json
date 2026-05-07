@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const d=require\\('./public/world.json'\\); console.log\\('features:', d.features?.length\\); console.log\\('first:', JSON.stringify\\(d.features?.[0]?.properties\\)\\)\")",
+      "Bash(node -e ':*)",
+      "Bash(node -e \"const d=require\\('./public/world.json'\\); console.log\\('features:', d.features.length, 'props:', JSON.stringify\\(d.features[0].properties\\)\\)\")",
+      "Bash(node --input-type=module)",
+      "Bash(node -e \"const d=require\\('./public/world.json'\\); console.log\\('features:', d.features.length, 'first props:', JSON.stringify\\(d.features[0].properties\\), 'second props:', JSON.stringify\\(d.features[1].properties\\)\\)\")",
+      "Bash(node -e \"const m=require\\('react-simple-maps'\\); console.log\\(Object.keys\\(m\\).join\\(', '\\)\\)\")",
+      "Bash(npm i:*)",
+      "Bash(node -e \"const t=require\\('./tsconfig.json'\\); console.log\\(JSON.stringify\\(t.compilerOptions?.typeRoots ?? t.compilerOptions?.paths ?? 'none'\\)\\)\")",
+      "Bash(npm uninstall:*)"
+    ]
+  }
+}
