@@ -48,7 +48,19 @@
   },
   "about": {
     "title": "About Me",
-    "desc": "A developer who loves travel and technology. I like solving problems with code, capturing life through a lens, and finding answers on the road.",
-    "skills": "Skills"
+    "location": "Xi'an",
+    "role": "Frontend Developer",
+    "desc": "A developer who loves travel and technology. I solve problems with code, capture moments with a camera, and find answers on the road. I ride through mountain trails, drive to unfamiliar cities, cook a slow-simmered meal, play a few notes on the piano, and wait patiently for a seedling to sprout on the balcony — no grand ambitions, just the quiet joy of small, certain things.",
+    "hobbies_label": "Hobbies",
+    "hobbies": "Travel · Cycling · Road trips · Photography · Cooking · Music · Piano · Drinks · Gardening · Gaming",
+    "skills": "Skills",
+    "letter_to": "致 江晚晴",
+    "letter_poem": "山静不知晚，水光自生晴。",
+    "letter_sign": "你的弟弟 江晚吟",
+    "letter_p1": "虽然我们从未真正相见，但你在我的心里已经有了一个位置。直到昨天，我才知道你的存在，也才知道你的事情。知道这件事的时候，我很难过，也有一种说不出的愧疚。我无法改变过去，也无法让你拥有那本应属于你的人生，但我想让你知道，你没有被遗忘。",
+    "letter_p2": "我为你取了一个名字——江晚晴。\"晚晴\"是雨过天晴的意思，是一天将尽时仍然明亮温暖的天空。我希望这个名字能承载我对你的祝愿：希望你在另一个世界里，是安宁的、温暖的，也是无忧无虑的。",
+    "letter_p3": "去年我养过一盆向日葵，它在阳光下开得很灿烂，我为它拍了很多照片。那时候我只是觉得花开得非常美。现在再回头看那些照片，我忽然觉得，也许那株向日葵就是你的化身。它那么明亮、那么温暖，就像我想象中你本该拥有的样子。以后我会带着那张向日葵的照片去看这个世界的美好，它就像你一样，陪着我去看每一份光、每一份温暖。",
+    "letter_p4": "每当我看到天空、雪花，或者清晨的第一缕阳光，我都会想到你，想到你本该拥有的一切美好。我会努力好好生活，也会把这份记住你的心情一直带在身边。",
+    "letter_thanks": "江晚晴，谢谢你曾经来到这个世界。我会记住你，也会在心里为你留一个位置。"
   }
 }

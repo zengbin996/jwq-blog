@@ -2,7 +2,28 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
+
+function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return <span className="w-8 h-8" />;
+  return (
+    <button
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      className="w-8 h-8 flex items-center justify-center rounded-md text-zinc-500 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/8 transition-colors"
+      aria-label="Toggle theme"
+    >
+      {theme === 'dark' ? (
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      ) : (
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      )}
+    </button>
+  );
+}
 import type { Dictionary } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
 
@@ -95,6 +116,8 @@ export default function Header({ lang, dict }: Props) {
               </li>
             ))}
           </ul>
+
+          <ThemeToggle />
 
           {/* Language switcher */}
           <div className="ml-3 flex items-center gap-1 text-xs border-l border-black/10 dark:border-white/10 pl-3">

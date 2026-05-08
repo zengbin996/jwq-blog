@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { Geist, Geist_Mono } from 'next/font/google';
 import '../globals.css';
 import Header from '@/components/Header';
+import ThemeProvider from '@/components/ThemeProvider';
 import { LOCALES, hasLocale, getDictionary } from '@/lib/i18n';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
@@ -34,8 +35,9 @@ export default async function LangLayout({
   const dict = await getDictionary(lang);
 
   return (
-    <html lang={lang} className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang={lang} className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col">
+        <ThemeProvider>
         <Header lang={lang} dict={dict.nav} />
         <main className="flex-1 pt-14">{children}</main>
         <footer className="border-t border-black/6 dark:border-white/6 py-6 mt-8">
@@ -44,6 +46,7 @@ export default async function LangLayout({
             <span>Built with Next.js & Tailwind CSS</span>
           </div>
         </footer>
+        </ThemeProvider>
       </body>
     </html>
   );
