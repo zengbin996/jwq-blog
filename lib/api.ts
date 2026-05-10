@@ -82,6 +82,7 @@ export interface Photo {
   description: string | null;
   featured: boolean;
   order: number;
+  coverIndex: number;
   footprint: Footprint | null;
   categories: PhotoCategory[];
   publishedAt: string | null;
@@ -123,6 +124,13 @@ export async function getArticleCategories(): Promise<ArticleCategory[]> {
   return data.data;
 }
 
+export interface FeaturedPhoto {
+  id: number;
+  documentId: string;
+  priority: number;
+  image: StrapiMedia | null;
+}
+
 // ─── Photo API ────────────────────────────────────────────────────────────────
 
 export async function getPhotos(params?: { featured?: boolean }): Promise<Photo[]> {
@@ -131,13 +139,25 @@ export async function getPhotos(params?: { featured?: boolean }): Promise<Photo[
     'populate[0]': 'image',
     'populate[1]': 'footprint',
     'populate[2]': 'categories',
-    'sort': 'takenAt:desc,order:asc',
     'pagination[pageSize]': '500',
   };
   if (params?.featured) {
     query['filters[featured][$eq]'] = 'true';
+    query['sort'] = 'order:asc,takenAt:desc';
+  } else {
+    query['sort'] = 'takenAt:desc,order:asc';
   }
   const data = await strapiGet<{ data: Photo[] }>('/photos', query);
+  return data.data;
+}
+
+export async function getFeaturedPhotos(): Promise<FeaturedPhoto[]> {
+  'use cache';
+  const data = await strapiGet<{ data: FeaturedPhoto[] }>('/featured-photos', {
+    'populate': 'image',
+    'sort': 'priority:asc',
+    'pagination[pageSize]': '50',
+  });
   return data.data;
 }
 

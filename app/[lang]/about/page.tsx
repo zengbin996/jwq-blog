@@ -14,7 +14,6 @@ export async function generateMetadata({ params }: PageProps<'/[lang]/about'>): 
   return { title: dict.about.title };
 }
 
-
 export default async function AboutPage({ params }: PageProps<'/[lang]/about'>) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
@@ -29,14 +28,18 @@ export default async function AboutPage({ params }: PageProps<'/[lang]/about'>) 
         </div>
         <div>
           <h1 className="text-2xl font-bold mb-1">JWQ</h1>
-          <p className="text-zinc-400 dark:text-zinc-500 text-sm mb-2">{dict.about.location} · {dict.about.role}</p>
+          <p className="text-zinc-400 dark:text-zinc-500 text-sm mb-2">
+            {dict.about.location} · {dict.about.role}
+          </p>
           <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed text-sm mb-3">{dict.about.desc}</p>
-          <p className="text-zinc-400 dark:text-zinc-500 text-sm leading-relaxed">{dict.about.hobbies_label}：{dict.about.hobbies}</p>
+          <p className="text-zinc-400 dark:text-zinc-500 text-sm leading-relaxed">
+            {dict.about.hobbies_label}：{dict.about.hobbies}
+          </p>
         </div>
       </section>
 
       {/* Letter */}
-      <section className="border-t border-zinc-200 dark:border-zinc-800 pt-14">
+      {/* <section className="border-t border-zinc-200 dark:border-zinc-800 pt-14">
         <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-8">{dict.about.letter_to}</p>
         <div className="space-y-5 text-zinc-600 dark:text-zinc-400 leading-8 text-[15px]">
           <p>{dict.about.letter_p1}</p>
@@ -47,7 +50,7 @@ export default async function AboutPage({ params }: PageProps<'/[lang]/about'>) 
         </div>
         <p className="mt-10 text-sm text-zinc-400 dark:text-zinc-500 italic tracking-wider">{dict.about.letter_poem}</p>
         <p className="mt-6 text-sm text-zinc-500 dark:text-zinc-400 text-right">{dict.about.letter_sign}</p>
-      </section>
+      </section> */}
     </div>
   );
 }

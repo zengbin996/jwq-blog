@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getFootprints, getPhotos, mediaUrl } from '@/lib/api';
+import { getFootprints, getFeaturedPhotos, mediaUrl } from '@/lib/api';
 import { hasLocale, getDictionary, t, type Locale } from '@/lib/i18n';
 import FootprintMapLoader from '@/components/FootprintMapLoader';
 import JustifiedGrid from '@/components/JustifiedGrid';
@@ -35,14 +35,17 @@ const MOTTO_ICONS = [
 ];
 
 async function FeaturedPhotos({ lang, dict }: { lang: Locale; dict: Awaited<ReturnType<typeof getDictionary>> }) {
-  const photos = await getPhotos({ featured: true });
-  const display = photos.filter((p) => p.image?.[0] && p.image[0].width && p.image[0].height).slice(0, 20);
+  const photos = await getFeaturedPhotos();
+  const display = photos.filter((p) => p.image && p.image.width && p.image.height);
   if (display.length === 0) return null;
 
-  const items = display.map((photo) => {
-    const img = photo.image![0];
-    return { id: photo.id, url: mediaUrl(img), alt: photo.title ?? img.alternativeText ?? '', width: img.width, height: img.height };
-  });
+  const items = display.map((photo) => ({
+    id: photo.id,
+    url: mediaUrl(photo.image),
+    alt: photo.image?.alternativeText ?? '',
+    width: photo.image!.width,
+    height: photo.image!.height,
+  }));
 
   return (
     <section className="container pt-16 pb-8">

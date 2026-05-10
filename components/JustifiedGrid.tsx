@@ -61,9 +61,12 @@ export default function JustifiedGrid({ items, targetHeight = 280, gap = 8 }: Pr
   const containerRef = useRef<HTMLDivElement>(null);
   const [rows, setRows] = useState<Row[]>([]);
 
+  const [isMobile, setIsMobile] = useState(false);
+
   const recalculate = useCallback(() => {
     const width = containerRef.current?.clientWidth;
     if (!width) return;
+    setIsMobile(width < 640);
     setRows(buildRows(items, width, targetHeight, gap));
   }, [items, targetHeight, gap]);
 
@@ -73,6 +76,27 @@ export default function JustifiedGrid({ items, targetHeight = 280, gap = 8 }: Pr
     if (containerRef.current) observer.observe(containerRef.current);
     return () => observer.disconnect();
   }, [recalculate]);
+
+  if (isMobile) {
+    return (
+      <div ref={containerRef} className="w-full grid grid-cols-2" style={{ gap }}>
+        {items.map((item) => (
+          <div
+            key={item.id}
+            className="relative overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-900 group aspect-square"
+          >
+            <Image
+              src={item.url}
+              alt={item.alt}
+              fill
+              sizes="50vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div ref={containerRef} className="w-full">

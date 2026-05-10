@@ -6,7 +6,9 @@
       "Bash(curl -L \"https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json\" -o public/china.json)",
       "Bash(node -e \"const d=require\\('./public/china.json'\\); console.log\\('type:',d.type,'features:',d.features?.length\\); console.log\\('first:',JSON.stringify\\(d.features?.[0]?.properties\\)\\);\" --cwd \"c:/Users/Nick/Desktop/WWW/MYSELF/jwq-blog\")",
       "Bash(node -e \"var d=require\\('./public/china.json'\\); console.log\\(d.type, d.features && d.features.length\\);\")",
-      "Bash(node -e ':*)"
+      "Bash(node -e ':*)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\hello\\\\Desktop\\\\WWW\\\\jwq-strapi\" -Force)",
+      "Bash(Select-Object Name, PSIsContainer)"
     ]
   }
 }
