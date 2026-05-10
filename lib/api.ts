@@ -94,8 +94,7 @@ export async function getArticles(): Promise<Article[]> {
   'use cache';
   const data = await strapiGet<{ data: Article[] }>('/articles', {
     'populate[0]': 'cover',
-    'populate[1]': 'category',
-    'populate[2]': 'category.parent',
+    'populate[category][populate][0]': 'parent',
     'filters[published][$eq]': 'true',
     'sort': 'order:asc,createdAt:desc',
     'pagination[pageSize]': '200',
@@ -107,8 +106,7 @@ export async function getArticle(documentId: string): Promise<Article | null> {
   'use cache';
   const data = await strapiGet<{ data: Article }>(`/articles/${documentId}`, {
     'populate[0]': 'cover',
-    'populate[1]': 'category',
-    'populate[2]': 'category.parent',
+    'populate[category][populate][0]': 'parent',
   });
   return data.data ?? null;
 }
