@@ -26,7 +26,11 @@
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\hello\\\\Desktop\\\\WWW\\\\jwq-strapi\\\\src\\\\api\\\\photo\\\\content-types\\\\photo\\\\\" -File)",
       "Bash(ssh root@101.96.201.178 \"cat /etc/nginx/sites-enabled/* 2>/dev/null || ls /etc/nginx/conf.d/ 2>/dev/null && cat /etc/nginx/conf.d/*.conf 2>/dev/null | head -80\")",
       "Bash(ssh root@101.96.201.178 \"ls /www/ && pm2 list\")",
-      "Bash(ssh root@101.96.201.178 \"pm2 show blog | grep -E 'script|cwd|exec'\")"
+      "Bash(ssh root@101.96.201.178 \"pm2 show blog | grep -E 'script|cwd|exec'\")",
+      "Bash(ssh root@101.96.201.178 \"cat /www/jwq-strapi/.env 2>/dev/null | grep -i 'upload\\\\|cos\\\\|cdn\\\\|tencent\\\\|cloud\\\\|provider\\\\|bucket'\")",
+      "Bash(ssh root@101.96.201.178 \"ls /www/jwq-strapi/node_modules | grep -i 'strapi-provider\\\\|upload\\\\|tencent\\\\|cos'\")",
+      "Bash(ssh root@101.96.201.178 \"ls /www/jwq-strapi/node_modules | grep 'strapi-provider'\")",
+      "Bash(ssh root@101.96.201.178 \"cat /www/jwq-strapi/config/plugins.ts 2>/dev/null || cat /www/jwq-strapi/config/plugins.js 2>/dev/null\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\hello\\Desktop\\WWW\\jwq-strapi\\src\\admin\\pages",

@@ -6,6 +6,7 @@ const strapiHostname = new URL(STRAPI_URL).hostname;
 const nextConfig: NextConfig = {
   cacheComponents: true,
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: STRAPI_URL.startsWith('https') ? 'https' : 'http',
