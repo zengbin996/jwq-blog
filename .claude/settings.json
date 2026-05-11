@@ -23,7 +23,10 @@
       "PowerShell(ls -Recurse \"C:\\\\Users\\\\hello\\\\Desktop\\\\WWW\\\\jwq-strapi\\\\node_modules\\\\@strapi\\\\content-manager\\\\dist\" | Where-Object { $_.Extension -eq \".js\" } | Select-Object -First 50 FullName)",
       "PowerShell(ls \"C:\\\\Users\\\\hello\\\\Desktop\\\\WWW\\\\jwq-strapi\\\\node_modules\\\\@strapi\\\\content-manager\\\\dist\" | ForEach-Object { $_.Name })",
       "PowerShell(ls -Recurse \"C:\\\\Users\\\\hello\\\\Desktop\\\\WWW\\\\jwq-strapi\\\\node_modules\\\\@strapi\\\\content-manager\\\\dist\\\\server\" | Where-Object { $_.Extension -eq \".js\" } | Select-Object FullName)",
-      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\hello\\\\Desktop\\\\WWW\\\\jwq-strapi\\\\src\\\\api\\\\photo\\\\content-types\\\\photo\\\\\" -File)"
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\hello\\\\Desktop\\\\WWW\\\\jwq-strapi\\\\src\\\\api\\\\photo\\\\content-types\\\\photo\\\\\" -File)",
+      "Bash(ssh root@101.96.201.178 \"cat /etc/nginx/sites-enabled/* 2>/dev/null || ls /etc/nginx/conf.d/ 2>/dev/null && cat /etc/nginx/conf.d/*.conf 2>/dev/null | head -80\")",
+      "Bash(ssh root@101.96.201.178 \"ls /www/ && pm2 list\")",
+      "Bash(ssh root@101.96.201.178 \"pm2 show blog | grep -E 'script|cwd|exec'\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\hello\\Desktop\\WWW\\jwq-strapi\\src\\admin\\pages",
