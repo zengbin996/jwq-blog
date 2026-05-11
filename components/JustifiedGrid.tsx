@@ -78,9 +78,10 @@ export default function JustifiedGrid({ items, targetHeight = 280, gap = 8 }: Pr
   }, [recalculate]);
 
   if (isMobile) {
+    const mobileItems = items.length % 2 === 0 ? items : items.slice(0, -1);
     return (
       <div ref={containerRef} className="w-full grid grid-cols-2" style={{ gap }}>
-        {items.map((item) => (
+        {mobileItems.map((item) => (
           <div
             key={item.id}
             className="relative overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-900 group aspect-square"
