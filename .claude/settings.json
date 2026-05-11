@@ -30,7 +30,9 @@
       "Bash(ssh root@101.96.201.178 \"cat /www/jwq-strapi/.env 2>/dev/null | grep -i 'upload\\\\|cos\\\\|cdn\\\\|tencent\\\\|cloud\\\\|provider\\\\|bucket'\")",
       "Bash(ssh root@101.96.201.178 \"ls /www/jwq-strapi/node_modules | grep -i 'strapi-provider\\\\|upload\\\\|tencent\\\\|cos'\")",
       "Bash(ssh root@101.96.201.178 \"ls /www/jwq-strapi/node_modules | grep 'strapi-provider'\")",
-      "Bash(ssh root@101.96.201.178 \"cat /www/jwq-strapi/config/plugins.ts 2>/dev/null || cat /www/jwq-strapi/config/plugins.js 2>/dev/null\")"
+      "Bash(ssh root@101.96.201.178 \"cat /www/jwq-strapi/config/plugins.ts 2>/dev/null || cat /www/jwq-strapi/config/plugins.js 2>/dev/null\")",
+      "Bash(du -sh * .next)",
+      "Bash(du -sh .next/*)"
     ],
     "additionalDirectories": [
       "C:\\Users\\hello\\Desktop\\WWW\\jwq-strapi\\src\\admin\\pages",

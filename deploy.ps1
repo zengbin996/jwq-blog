@@ -7,7 +7,7 @@ npm run build
 if ($LASTEXITCODE -ne 0) { Write-Host "Build failed" -ForegroundColor Red; exit 1 }
 
 Write-Host ">>> Packing..." -ForegroundColor Cyan
-tar -czf $ARCHIVE --exclude='.git' --exclude='node_modules' --exclude='.env' --exclude='deploy.ps1' --exclude=$ARCHIVE .
+tar -czf $ARCHIVE --exclude='.git' --exclude='node_modules' --exclude='.next/cache' --exclude='.next/dev' --exclude='.env' --exclude='deploy.ps1' --exclude=$ARCHIVE .
 if ($LASTEXITCODE -ne 0) { Write-Host "Pack failed" -ForegroundColor Red; exit 1 }
 
 Write-Host ">>> Uploading..." -ForegroundColor Cyan
